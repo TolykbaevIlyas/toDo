@@ -25,8 +25,8 @@ const AddTask = () => {
       {click ? 
         <div>
             <input type="text" placeholder="Write description" className={`border-2 border-black rounded-lg m-2 ${descriptionCheck ? 'text-red-600': 'text-black-600'}`} value={description} onChange={(e)=>descriptionHandler(e)}/>
-            {descriptionCheck ? <>Problem more than 60, delete some text</>:<></>}
-            <button type="button" disabled={descriptionCheck ? false : true} className={`p-4 bg-red-600 rounded-lg m-2 ${descriptionCheck ? 'bg-slate-600' : 'bg-red-600'}`} onClick={()=>{setClick(!click)}}>AddTask</button>
+            {descriptionCheck ? <div>Problem more than 60, delete some text</div>:<></>}
+            <button type="button" disabled={descriptionCheck} className={`p-4 bg-red-600 rounded-lg m-2 ${descriptionCheck ? 'bg-slate-600' : 'bg-red-600'}`} onClick={()=>{setClick(!click)}}>AddTask</button>
         </div> 
       : <button type="button" className="p-4 bg-red-600 rounded-lg m-2" onClick={()=> setClick(!click)}>Click Me!</button>}
 
