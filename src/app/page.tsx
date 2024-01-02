@@ -1,5 +1,6 @@
 'use client'
 import { AddTask } from '@/features/addTaskToServer'
+import { GetTask } from '@/features/getTaskFromServer'
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -56,6 +57,7 @@ export default function Home() {
   return (
     <div className='w-screen h-screen flex items-center justify-center'>
       <AddTask/>
+      <GetTask/>
       {cardList.sort(sortCard).map(card => 
       <div 
         key={card.id}
