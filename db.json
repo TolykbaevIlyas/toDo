@@ -1,54 +1,39 @@
 {
   "tasks": [
     {
-      "title": "asdfsadfasd",
-      "description": "asdfasdfasdafadf",
-      "id": 1
-    },
-    {
-      "title": "Hello",
-      "description": "Do something",
-      "id": 2
-    },
-    {
-      "title": "asdf",
-      "description": "asdfasdf",
-      "id": 3
-    },
-    {
-      "title": "Hello",
-      "description": "Do anything",
-      "id": 4
-    },
-    {
       "title": "Ilyas",
       "description": "asdfdasf",
-      "id": 5
+      "id": 5,
+      "status": "in Work"
     },
     {
       "title": "Ilyas222",
       "description": "weqwerqwer",
-      "id": 6
+      "id": 6,
+      "status": "in Work"
     },
     {
       "title": "Kia",
       "description": "Driver Kia Taxi",
-      "id": 7
+      "id": 7,
+      "status": "in Work"
     },
     {
       "title": "asdfasdfasdf",
       "description": "adsfasdfasdfasdfa",
-      "id": 8
+      "id": 8,
+      "status": "Finished"
     },
     {
       "title": "asdfasdfasdfasdf",
       "description": "asdfasdfasdfasdfafs",
+      "status": "Finished",
       "id": 9
     },
     {
       "title": "First",
       "description": "Do minecraft game",
-      "status": "in Work",
+      "status": "Finished",
       "id": 10
     }
   ]

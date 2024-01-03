@@ -28,12 +28,27 @@ export const taskApi = createApi({
           body,
         }),
         invalidatesTags: [{type: 'Tasks', id: 'LIST'}]
+      }),
+      updateTask: builder.mutation({
+        query:({id, ...body})=> ({
+          url: `tasks/${id}`,
+          method: 'PATCH',
+          body
+        }),
+        invalidatesTags:[{type: 'Tasks', id: 'LIST'}]
+      }),
+      deleteTask: builder.mutation({
+        query:(id) => ({
+          url: `tasks/${id}`,
+          method: 'DELETE'
+        }),
+        invalidatesTags:[{type: 'Tasks', id: 'LIST'}]
       })
     }),
   })
 
 export default taskApi.reducer
-export const { useGetAllTasksQuery,useAddTaskMutation } = taskApi;
+export const { useGetAllTasksQuery,useAddTaskMutation,useUpdateTaskMutation,useDeleteTaskMutation } = taskApi;
 
 // axios.post('http://localhost:3001/tasks',{
 //         task,
