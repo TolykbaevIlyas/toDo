@@ -1,7 +1,5 @@
-import axios from "axios";
 import { useEffect, useRef, useState } from "react"
-import { postToServer } from "../api/postToServer";
-import { useGetAllTasksQuery } from "@/features/getTaskFromServer/api/TaskApi";
+import { useAddTaskMutation } from "@/shared/api/TaskApi";
 
 const AddTask = () => {
     const [title, setTitle] = useState('');
@@ -9,6 +7,7 @@ const AddTask = () => {
     const [description, setDescription] = useState('');
     const [descriptionCheck, setDescriptionCheck] = useState(false);
     const [checkToNull, setCheckToNull] = useState(false);
+    const [addTask,{isError}] = useAddTaskMutation();
 
     // console.log(description.length )
 
@@ -34,14 +33,13 @@ const AddTask = () => {
       }
     }
 
-    function sendHandler({title, description,setTitle,setDescription}:any){
+    async function sendHandler({title, description,setTitle,setDescription}:any){
       if(title.length == 0 && description.length == 0){
         setCheckToNull(true);
       }else{
-        console.log(title);
-        postToServer({title,description,setTitle,setDescription})
-        const {data ,error,isLoading,isFetching,currentData } = useGetAllTasksQuery();
-        console.log(data);
+        await addTask({title:title, description: description}).unwrap();    
+        setTitle('');
+        setDescription('');
       }
     }
 

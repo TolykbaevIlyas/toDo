@@ -1,4 +1,4 @@
-import { taskApi } from '@/features/getTaskFromServer/api/TaskApi';
+import { taskApi } from '@/shared/api/TaskApi';
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query';
 
