@@ -1,13 +1,14 @@
 import axios from "axios";
 
-export function postToServer({task,description,setTask,setDescription}:any){
+export function postToServer({title,description,setTitle,setDescription}:any){
     axios.post('http://localhost:3001/tasks',{
-      task,
+      title,
       description
     })
     .then(function(res:any){
       console.log(res);
-      setTask('');
+      console.log(description);
+      setTitle('');
       setDescription('');
     })
   }
