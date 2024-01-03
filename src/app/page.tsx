@@ -1,6 +1,7 @@
 'use client'
 import { AddTask } from '@/features/addTaskToServer'
 import { GetTask } from '@/features/getTaskFromServer'
+import { Tasks } from '@/widgets/Tasks'
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -55,21 +56,9 @@ export default function Home() {
   }
 
   return (
-    <div className='w-screen h-screen flex items-center justify-center'>
+    <div className='w-screen h-screen flex items-center justify-center flex-col'>
       <AddTask/>
-      <GetTask/>
-      {cardList.sort(sortCard).map(card => 
-      <div 
-        key={card.id}
-        onDragStart={(e)=> dragStartHandler(e,card)}
-        onDragLeave={(e)=> dragLeaveHandler(e)}
-        onDragEnd={(e)=> dragEndHandler(e)}
-        onDragOver={(e)=> dragOverHandler(e)}
-        onDrop={(e)=> dropHandler(e,card)}
-        className='w-52 h-72 rounded-xl border-2 border-black flex items-center justify-center m-5 cursor-grab'
-        draggable={true}>
-        {card.text}
-      </div>)}
+      <Tasks/>
     </div>
   )
 }

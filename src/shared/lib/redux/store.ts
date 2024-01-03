@@ -1,9 +1,13 @@
+import { taskApi } from '@/features/getTaskFromServer/api/TaskApi';
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query';
 
 export const store = configureStore ({
   reducer:{
+    [taskApi.reducerPath] : taskApi.reducer,
   },
+  middleware:(getDefaultMiddleware) => 
+  getDefaultMiddleware().concat(taskApi.middleware),
 });
 
 setupListeners(store.dispatch);
