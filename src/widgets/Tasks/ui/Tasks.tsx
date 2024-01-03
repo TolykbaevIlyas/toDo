@@ -15,7 +15,7 @@ const Tasks = () => {
             {error ? (<>ERROR</>) 
                 : isLoading ? (<>IS LOADING</>)
                 : data ?
-                data.map((tas:any)=> <Task key={tas.id} name={tas.title} description={tas.description}/>) : null}
+                data.map((tas:any)=> <Task key={tas.id} name={tas.title} description={tas.description} status={tas.status}/>) : null}
            </div>
         </div>
 

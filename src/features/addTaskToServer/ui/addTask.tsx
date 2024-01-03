@@ -37,7 +37,7 @@ const AddTask = () => {
       if(title.length == 0 && description.length == 0){
         setCheckToNull(true);
       }else{
-        await addTask({title:title, description: description}).unwrap();    
+        await addTask({title:title, description: description, status: "in Work"}).unwrap();    
         setTitle('');
         setDescription('');
       }
