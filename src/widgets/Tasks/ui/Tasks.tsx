@@ -3,6 +3,7 @@ import { Task } from '@/entities/Task';
 import { useGetAllTasksQuery } from '@/shared/api/TaskApi';
 import { AddTask } from '@/features/addTaskToServer';
 import { ChangeStatus } from '@/features/changeStatus';
+import { SwitchThemeButton } from '@/features/ChangeTheme';
 
 
 const Tasks = () => {
@@ -11,7 +12,8 @@ const Tasks = () => {
     return (
         <div className=''>
             <div className='flex flex-wrap justify-center my-10'>
-                <AddTask/>   
+                <AddTask/> 
+                <SwitchThemeButton/>  
             </div>
            <div className='flex flex-wrap justify-around mx-80'>
             {error ? (<>ERROR</>) 
