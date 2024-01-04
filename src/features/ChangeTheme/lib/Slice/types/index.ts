@@ -1,4 +1,3 @@
 export interface IThemeConfig{
-    cardBackgroundColor: string;
-    cardTextColor: string;
+    ThemeName: string;
 }

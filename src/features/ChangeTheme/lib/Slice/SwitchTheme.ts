@@ -3,36 +3,36 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { IThemeConfig } from './types'
 
 
-
-
 const initialState:IThemeConfig = {
-    cardBackgroundColor: "string",
-    cardTextColor: "string"
+    ThemeName: 'default',
 }
 
 export const switchTheme = createSlice({
   name: 'switchTheme',
   initialState,
   reducers: {
-    ChangeTheme: (state:any,action:PayloadAction<any>)=>{
-        if(action.payload){
-          return {
-
+    ChangeTheme: (state:any ,action:PayloadAction<any>)=>{
+      switch(action.payload){
+        case 'default':
+          return{
+            ThemeName: 'default',
           }
-        }
-          else{
-            return{
-
-              
-            }
+        case 'second':
+          return{
+            ThemeName: 'second',
           }
+        case 'third':
+          return{
+            ThemeName: 'third',
+          }   
         }
+      }
 
     },
   },
 )
 
 // Action creators are generated for each case reducer function
-export const {ChangeTheme,addTheme} = switchTheme.actions
+export const {ChangeTheme} = switchTheme.actions
 
 export default switchTheme.reducer

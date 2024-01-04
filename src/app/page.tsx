@@ -1,4 +1,5 @@
 'use client'
+import { SwitchThemeButton } from '@/features/ChangeTheme'
 import { AddTask } from '@/features/addTaskToServer'
 import { GetTask } from '@/features/getTaskFromServer'
 import { Tasks } from '@/widgets/Tasks'
@@ -57,6 +58,7 @@ export default function Home() {
 
   return (
     <div className='flex items-center justify-center flex-col'>
+      <SwitchThemeButton/>
       <Tasks/>
     </div>
   )

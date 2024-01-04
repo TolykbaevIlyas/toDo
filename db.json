@@ -1,28 +1,10 @@
 {
   "tasks": [
     {
-      "title": "Ilyas",
-      "description": "asdfdasf",
-      "id": 5,
-      "status": "in Work"
-    },
-    {
-      "title": "Ilyas222",
-      "description": "weqwerqwer",
-      "id": 6,
-      "status": "in Work"
-    },
-    {
-      "title": "Kia",
-      "description": "Driver Kia Taxi",
-      "id": 7,
-      "status": "in Work"
-    },
-    {
       "title": "asdfasdfasdf",
       "description": "adsfasdfasdfasdfa",
       "id": 8,
-      "status": "Finished"
+      "status": "in Work"
     },
     {
       "title": "asdfasdfasdfasdf",
@@ -35,6 +17,12 @@
       "description": "Do minecraft game",
       "status": "Finished",
       "id": 10
+    },
+    {
+      "title": "Pomodoro",
+      "description": "learn pomodoro",
+      "status": "in Work",
+      "id": 11
     }
   ]
 }
