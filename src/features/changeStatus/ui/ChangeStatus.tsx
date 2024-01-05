@@ -99,10 +99,23 @@ const ChangeStatus = ({id,status}:any) => {
                         </label>
                     </div>
                 : Theme.ThemeName === 'third' ?
-                    <div className="flex justify-between border-t-2 border-black ">
-                        <button className="w-full p-4 bg-orange-600" type='button' onClick={() => handleUpdateTask(id, "Finished")}>finished</button>
+                    <div className="flex justify-between border-black ">
+                        <div className="w-96 border-2 border-black h-96 overflow-scroll">
+                            <p className="text-center border-b-2 border-black">Finished</p>
+                            <div></div>
+                        </div>
+                        <div className="w-96 border-2 border-black h-96 overflow-scroll">
+                            <p className="text-center border-b-2 border-black">in Work</p>
+                            <div></div>
+                        </div>
+                        <div className="w-96 border-2 border-black h-96 overflow-scroll">
+                            <p className="text-center border-b-2 border-black">Delete</p>
+                            <div></div>
+                        </div>
+
+                        {/* <button className="w-full p-4 bg-orange-600" type='button' onClick={() => handleUpdateTask(id, "Finished")}>finished</button>
                         <button className="w-full p-4 bg-emerald-600" type='button' onClick={() => handleUpdateTask(id, "in Work")}>in Work</button>
-                        <button className="w-full p-4 bg-orange-900" type='button' onClick={() => handleDeleteTask(id)}>Delete</button>
+                        <button className="w-full p-4 bg-orange-900" type='button' onClick={() => handleDeleteTask(id)}>Delete</button> */}
                     </div>
                 : null
             }
