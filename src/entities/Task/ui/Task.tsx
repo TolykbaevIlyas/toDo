@@ -20,7 +20,7 @@ const Task = ({id, name, description,status}: any) => {
           {status == "in Work" ? <p className={`text-lime-400`}>{status}</p> :
           status == "Finished" ? <p className={`text-cyan-400`}>{status}</p> :
           null}
-          <ChangeStatus id={id}/>
+          <ChangeStatus id={id} status={status}/>
         </div>
       </div>
       : Theme.ThemeName === 'second' ?
@@ -35,7 +35,7 @@ const Task = ({id, name, description,status}: any) => {
           {status == "in Work" ? <p className={`text-lime-400`}>{status}</p> :
           status == "Finished" ? <p className={`text-cyan-400`}>{status}</p> :
           null}
-          <ChangeStatus id={id}/>
+          <ChangeStatus id={id} status={status}/>
         </div>
       </div>
       : Theme.ThemeName === 'third' ?
@@ -50,7 +50,7 @@ const Task = ({id, name, description,status}: any) => {
           {status == "in Work" ? <p className={`text-lime-400`}>{status}</p> :
           status == "Finished" ? <p className={`text-cyan-400`}>{status}</p> :
           null}
-          <ChangeStatus id={id}/>
+          <ChangeStatus id={id} status={status}/>
         </div>
       </div>
       : null}

@@ -6,7 +6,7 @@ import { ChangeTheme } from '../lib/Slice/SwitchTheme'
 const SwitchThemeButton = () => {
     const Theme = useSelector((state: RootState) => state.switchTheme)
     const dispatch = useDispatch();
-    console.log(Theme)
+    //console.log(Theme)
   return (
     <div className='flex justify-end'>
     {Theme.ThemeName === 'default' ? 

@@ -1,27 +1,21 @@
 {
   "tasks": [
     {
-      "title": "asdfasdfasdf",
-      "description": "adsfasdfasdfasdfa",
-      "id": 8,
-      "status": "in Work"
-    },
-    {
       "title": "asdfasdfasdfasdf",
       "description": "asdfasdfasdfasdfafs",
-      "status": "Finished",
+      "status": "in Work",
       "id": 9
     },
     {
       "title": "First",
       "description": "Do minecraft game",
-      "status": "Finished",
+      "status": "in Work",
       "id": 10
     },
     {
       "title": "Pomodoro",
       "description": "learn pomodoro",
-      "status": "in Work",
+      "status": "Finished",
       "id": 11
     }
   ]

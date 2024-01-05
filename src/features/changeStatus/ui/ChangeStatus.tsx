@@ -1,37 +1,70 @@
 import { useUpdateTaskMutation,useDeleteTaskMutation } from "@/shared/api/TaskApi";
 import { RootState } from "@/shared/lib/redux/store";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-const ChangeStatus = ({id}:any) => {
+const ChangeStatus = ({id,status}:any) => {
     const [UpdateTask,{isError}] = useUpdateTaskMutation();
     const [DeleteTask] = useDeleteTaskMutation();
     const [finished, setFinished] = useState(false);
-    const [inWork, setInWork] = useState(true);
+    const [inWork, setInWork] = useState(false);
     const [Delete, setDelete] = useState(false);
     const Theme = useSelector((state: RootState) => state.switchTheme)
     const dispatch = useDispatch();
+
+    useEffect(()=>{
+        switch (status) {
+            case "in Work":
+                setInWork(true);
+                setFinished(false);
+                setDelete(false);
+                console.log("inWork");
+                break;
+            case 'Finished': 
+                setInWork(false);
+                setFinished(true);
+                setDelete(false);
+                console.log("finished");
+                break;
+        }
+    },[])
 
     const handleDeleteTask = async (id) => {
         await DeleteTask(id).unwrap();
     }
 
     const handleUpdateTask = async (id,status) =>{
-        handleCheckToggle()
+        handleCheckToggle(status)
         await UpdateTask({id, status:status}).unwrap();
     }
 
-    const handleCheckToggle = () => {
-        if(inWork){
-            setInWork(true);
-            setFinished(false);
-            setDelete(false);
+    const handleCheckToggle = (status) => {
+        switch (status) {
+            case "in Work":
+                setInWork(true);
+                setFinished(false);
+                setDelete(false);
+                console.log("inWork");
+                break;
+            case 'Finished': 
+                setInWork(false);
+                setFinished(true);
+                setDelete(false);
+                console.log("finished");
+                break;
         }
-        else if(finished){
-            setInWork(false);
-            setFinished(false);
-            setDelete(false);
-        }
+        // if(inWork){
+        //     setInWork(true);
+        //     setFinished(false);
+        //     setDelete(false);
+        //     console.log("inWork");
+        // }
+        // if(finished){
+        //     setInWork(false);
+        //     setFinished(true);
+        //     setDelete(false);
+        //     console.log("finished");
+        // }
     }
 
 
