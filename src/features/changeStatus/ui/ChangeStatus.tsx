@@ -102,7 +102,9 @@ const ChangeStatus = ({id,status}:any) => {
                     <div className="flex justify-between border-black ">
                         <div className="w-96 border-2 border-black h-96 overflow-scroll">
                             <p className="text-center border-b-2 border-black">Finished</p>
-                            <div></div>
+                            <div>
+                                
+                            </div>
                         </div>
                         <div className="w-96 border-2 border-black h-96 overflow-scroll">
                             <p className="text-center border-b-2 border-black">in Work</p>
